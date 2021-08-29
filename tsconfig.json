@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -14,6 +18,19 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "../components/Controls.tsx",
+    "components/Random.js",
+    "components/Controls.js",
+    "components/Colors.js",
+    "components/AddColor.js",
+    "components/AnimatedBackground.js",
+    "context/SettingsContext.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

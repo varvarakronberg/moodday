@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+MoodDay is a collaboration project by Varvara Kronberg (FS developer https://contra.com/varvara_kronberg) and Michael Rafailyk (Type Designer https://michaelrafailyk.com/)
+Gradient tool generator created based on tutorial: https://css-tricks.com/building-a-cool-front-end-thing-generator/ by John Polacek 
+
+[Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+
+
+
+
+
+
+NEXT (to delete later)
 
 ## Getting Started
 
