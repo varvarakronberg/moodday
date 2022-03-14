@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model country {
+  id     Int     @id @default(autoincrement())
+  name   String
+  iso2   String?
+  iso3   String?
+  cities city[]
+}
+
+model city {
+  id        Int     @id @default(autoincrement())
+  countryId Int
+  country   country @relation(fields: [countryId], references: [id])
+}
+
+model tag {
+  id            Int     @id @default(autoincrement())
+  tag           String
+  prompt_number Int
+  is_preset     Boolean @default(false)
+}
