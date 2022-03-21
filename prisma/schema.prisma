@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+//?if schema changes how do I recreate it from scratch? or add to it? - change this file->migration are created automatically when prisma command is run
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model country {
+  id          Int          @id @default(autoincrement())
+  name        String
+  iso2        String?
+  iso3        String?
+  cities      city[]
+  submissions submission[]
+}
+
+model city {
+  id          Int          @id @default(autoincrement())
+  name        String
+  countryId   Int
+  country     country      @relation(fields: [countryId], references: [id])
+  submissions submission[]
+}
+
+model tag {
+  id            Int          @id @default(autoincrement())
+  tag           String
+  prompt_number Int
+  is_preset     Boolean      @default(false)
+  submissions   submission[]
+}
+
+model submission {
+  id            Int       @id @default(autoincrement())
+  authorName    String
+  colors        String[]
+  tags          tag[]
+  cities        city[]
+  originCountry country[]
+}
